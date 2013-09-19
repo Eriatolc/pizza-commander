@@ -1,0 +1,23 @@
+{
+	"name": "pizza-commander",
+	"version": "0.1.0",
+	"description": "Server and client-sides to manage pizza ordering for big groups.",
+	"author": "Clotaire Delanchy <clo.delanchy@gmail.com>",
+	"license": "MIT",
+	"private" : true,
+	"preferGlobal": false,
+	"dependencies": {
+		"commander": "1.0.x",
+		"cookies":"0.3.x",
+		"restify": "2.6.x",
+	},
+	"main": "bin/pizza-commander.js",
+	"directories": {
+		"bin": "./bin",
+		"lib": "./lib",
+		"www": "./www"
+	},
+	"engine": {
+		"node": "0.10.x"
+	}
+}
