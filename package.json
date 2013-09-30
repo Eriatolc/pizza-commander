@@ -8,8 +8,7 @@
 	"preferGlobal": false,
 	"dependencies": {
 		"commander": "1.0.x",
-		"cookies":"0.3.x",
-		"restify": "2.6.x",
+		"restify": "2.6.x"
 	},
 	"main": "bin/pizza-commander.js",
 	"directories": {
