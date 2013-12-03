@@ -1,0 +1,126 @@
+//algo pour commander les pizza chez dominos
+
+pré requis :
+	un tableau appelé "type" avec les gouts des pizzas. Il faut les ordonner pour avoir en premier les pizzas sans porc et sans poisson, ensuite celles avec du
+	porc et sans poisson, et enfin celle avec du poisson. Le but est de ne pas froisser d'éventuels musulmans.
+
+int dpizz[b3] = new tableau; //tableau d'int, de longueur du nombre de pizzas différentes
+int nbpizz = 0; //nombre total de pizza
+int b1, b2, b3 bornes de la liste de type de pizza pour séparations avec/sans porc, avec/sans poisson, et borne de fin
+
+//============= pizza sans porc sans poisson ====================================================
+for i = 0 : 1 : b1
+	if mod(i,2) == 0
+		"commander " num2str(dpizz(i/2)) " pizza(s) de type " type(i);
+		nbpizz = nbpizz + i/2;
+		dpizz(i) = 0;
+	else
+		"commander " num2str(dpizz(i/2)) " pizza(s) de type " type(i);
+		nbpizz = nbpizz + i/2;
+		dpizz(i) = 1;
+	//end if
+//end for
+
+for i = 0 : 1 : b1
+	if dpizz(i) == 1
+		if type1 != 0
+			"commander " num2str() " pizza(s) de type " type(type1) " / " type(dpizz(i/2));
+			type1 = 0;
+		else
+			type1 = i;
+		//end if
+//end for
+
+
+//============= pizza avec porc sans poisson ====================================================
+for i = b1+1 : 1 : b2
+	if mod(i,2) == 0
+		"commander " num2str(dpizz(i/2)) " pizza(s) de type " type(i);
+		nbpizz = nbpizz + i/2;
+		dpizz(i) = 0;
+	else
+		"commander " num2str(dpizz(i/2)) " pizza(s) de type " type(i);
+		nbpizz = nbpizz + i/2;
+		dpizz(i) = 1;
+	//end if
+//end for
+
+for i = b1+1 : 1 : b2
+	if dpizz(i) == 1
+		if type1 != 0
+			"commander " num2str() " pizza(s) de type " type(type2) " / " type(dpizz(i/2));
+			nbpizz = nbpizz + 1; 
+			type2 = 0;
+		else
+			type2 = i;
+		//end if
+//end for
+
+
+//============= pizza ave poisson ====================================================
+for i = b2+1 : 1 : b3
+	if mod(i,2) == 0
+		"commander " num2str(dpizz(i/2)) " pizza(s) de type " type(i);
+		nbpizz = nbpizz + i/2;
+		dpizz(i) = 0;
+	else
+		"commander " num2str(dpizz(i/2)) " pizza(s) de type " type(i);
+		nbpizz = nbpizz + i/2;
+		dpizz(i) = 1;
+	//end if
+//end for
+
+for i = b2+1 : 1 : b3
+	if dpizz(i) == 1
+		if type1 != 0
+			"commander " num2str() " pizza(s) de type " type(type3) " / " type(dpizz(i/2));
+			nbpizz = nbpizz + 1; 
+			type3 = 0;
+		else
+			type3 = i;
+		//end if
+//end for
+
+
+//============= les demi-pizzas restantes ==================================================================
+if type1 == 1 && type3 == 1	//pizza sans porc
+	"commander 1 pizza(s) de type " type(type1) " / " type(type3);
+	nbpizz = nbpizz + 1; 
+	if type2 == 1
+		"commander " num2str() " pizza(s) de type " type(type2) " / " type(rand(0:b2)); //rand jusqu'a b2, on ne va pas en prendre au poisson non plus
+		nbpizz = nbpizz + 1; 
+	type1 = 0;
+	type2 = 0;
+	type3 = 0;
+
+if type1 == 1 && type2 == 1
+	"commander 1 pizza(s) de type " type(type1) " / " type(type2);
+	nbpizz = nbpizz + 1; 
+	if type3 == 1
+		"commander " num2str() " pizza(s) de type " type(type3) " / " type(rand(0:b2)); //rand jusqu'a b2, on ne va pas en prendre au poisson non plus
+		nbpizz = nbpizz + 1; 
+	type1 = 0;
+	type2 = 0;
+	type3 = 0;
+
+if type2 == 1 && type3 == 1
+	"commander 1 pizza(s) de type " type(type1) " / " type(type3);
+	nbpizz = nbpizz + 1; 
+	type1 = 0;
+	type2 = 0;
+	type3 = 0;
+
+disp("pour rappel, il y a " num2str(nbpizz) " a commander");
+
+
+Et c'est fini
+
+
+
+
+
+
+
+
+
+
