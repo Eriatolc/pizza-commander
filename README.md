@@ -1,7 +1,11 @@
 # pizza-commander
 
-
 A simple web app to order pizza for large groups.
+
+## News
+
+ * **/!\ Don't forget to make a `db.pizzas.remove()` in `MongoDB` before starting the application /!\ **
+
 
 ## Objectives
 
@@ -15,7 +19,8 @@ A simple web app to order pizza for large groups.
 We can improve these simple specifications by:
 
  * automatical order,
- * when you order, you can enter the name of the person ordering to have on the final order 'who order what'.
+ * when you order, you can enter the name of the person ordering to have on the final order 'who order what',
+ * use the NFC Card/account created by the BDE guys.
 
 
 
@@ -24,6 +29,3 @@ We can improve these simple specifications by:
 
 
 ## Admin architecture
-
-
-Arrivée d'Alexis
